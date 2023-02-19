@@ -6,6 +6,7 @@ import {
   Heading,
   InputRightElement,
   Text,
+  Image,
 } from "@chakra-ui/react";
 import { BsArrowReturnLeft } from "react-icons/bs";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
@@ -174,10 +175,23 @@ function Mainsection() {
       {/* browser extensions container */}
       <div id="browser-extensions">
         <div id="chrome">
+          <Image
+            width={"30px"}
+            height={"30px"}
+            src="https://img.icons8.com/fluency/48/null/chrome.png"
+            alt="chrome"
+            marginRight={"10px"}
+          />
+
           <Text size={"lg"}>Add to Chrome</Text>
         </div>
 
         <div id="firefox">
+          <Image
+            src="https://img.icons8.com/external-those-icons-flat-those-icons/30/null/external-Firefox-logos-and-brands-those-icons-flat-those-icons.png"
+            alt="firefox"
+            marginRight={"10px"}
+          />
           <Text size={"lg"}>Add to Firefox</Text>
         </div>
       </div>
