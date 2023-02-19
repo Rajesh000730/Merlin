@@ -44,7 +44,7 @@
 
 #merlin-response {
   width: 85%;
-  height: 223px;
+  min-height: 223px;
   border: 1px solid #334155;
   border-radius: 16px;
   margin-top: 64px;
@@ -62,8 +62,8 @@
 
 #response {
   width: 100%;
-  max-height: 130px;
-  overflow-y: scroll;
+  min-height: 133px;
+
   padding: 15px 23px;
   /* animation: typing 1s steps(40) infinite; */
 }
@@ -104,6 +104,9 @@
     0.5 / 1 / 0.5;
   border-radius: 10px;
   margin-right: 10px;
+  /* margin-right: 10px; */
+  display: flex;
+  align-items: center;
 }
 
 #firefox {
@@ -113,6 +116,8 @@
   border-image: linear-gradient(to right, #921dfb80, #f334f2, #ff008280) round
     0.5 / 1 / 0.5;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
 }
 
 #browser-extensions {
