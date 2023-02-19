@@ -28,10 +28,11 @@
 }
 
 #commands {
+  width: 85vw;
   display: flex;
   align-items: center;
   margin-top: 18px;
-  max-width: 85vw;
+  max-width: 876px;
   flex-wrap: wrap;
 }
 

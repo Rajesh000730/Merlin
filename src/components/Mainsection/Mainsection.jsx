@@ -208,17 +208,19 @@ function Mainsection() {
           </div>
         </Button>
 
-        <div id="firefox">
-          <Image
-            src="https://img.icons8.com/external-those-icons-flat-those-icons/30/null/external-Firefox-logos-and-brands-those-icons-flat-those-icons.png"
-            alt="firefox"
-            marginRight={"10px"}
-            width={"20px"}
-          />
-          <Text fontSize={"14px"} fontWeight={"600"}>
-            Add to Firefox
-          </Text>
-        </div>
+        <Button variant={"unstyled"}>
+          <div id="firefox">
+            <Image
+              src="https://img.icons8.com/external-those-icons-flat-those-icons/30/null/external-Firefox-logos-and-brands-those-icons-flat-those-icons.png"
+              alt="firefox"
+              marginRight={"10px"}
+              width={"20px"}
+            />
+            <Text fontSize={"14px"} fontWeight={"600"}>
+              Add to Firefox
+            </Text>
+          </div>
+        </Button>
       </div>
     </div>
   );
