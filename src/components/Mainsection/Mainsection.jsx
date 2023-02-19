@@ -28,13 +28,9 @@ function Mainsection() {
       const eventSource = new EventSource(
         "https://take-home-endpoints-yak3s7dv3a-el.a.run.app/sse"
       );
-      eventSource.onopen = () => {
-        console.log("SSE connection opened");
-      };
 
       eventSource.onmessage = (event) => {
         const newData = JSON.parse(event.data);
-        console.log(event.data);
         if (newData.choices) {
           setResponse((prevResponse) => prevResponse + newData.choices[0].text);
         } else {
