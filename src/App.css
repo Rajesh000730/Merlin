@@ -1,0 +1,7 @@
+.App{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(27, 27, 27);
+    color: white;
+    overflow-y: scroll;
+}
