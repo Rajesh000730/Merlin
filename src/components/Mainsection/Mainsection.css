@@ -30,6 +30,7 @@
 #commands {
   width: 85vw;
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-top: 18px;
   max-width: 876px;
