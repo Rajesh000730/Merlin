@@ -1,14 +1,6 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-body{
-  /* background-color: #f5f5f5; */
-  font-family: 'Roboto', sans-serif;
-  background-color: black;
-
-}
-
-/* Path: src/components/Header/index.css */ 
-
+/* Path: src/components/Header/index.css */

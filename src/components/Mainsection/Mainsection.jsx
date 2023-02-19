@@ -113,7 +113,7 @@ function Mainsection() {
         <div id="merlin-response">
           <div id="merlin-header">
             <Heading fontSize={"18px"} fontWeight={700}>
-              merlin Says:
+              Merlin Says:
             </Heading>
             <div style={{ display: "flex" }}>
               {/* left right arrow */}
