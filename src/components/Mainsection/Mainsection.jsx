@@ -6,6 +6,7 @@ import {
   Heading,
   InputRightElement,
   Text,
+  Spinner,
   Image,
 } from "@chakra-ui/react";
 import { BsArrowReturnLeft } from "react-icons/bs";
@@ -13,6 +14,8 @@ import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import { TbRefresh } from "react-icons/tb";
 import { RxCopy } from "react-icons/rx";
 import "./Mainsection.css";
+//url for api
+const url = "https://take-home-endpoints-yak3s7dv3a-el.a.run.app/sse";
 
 function Mainsection() {
   // state variables
@@ -20,15 +23,14 @@ function Mainsection() {
   const [commands, setCommands] = React.useState([]);
   const [response, setResponse] = React.useState("");
   const [enable, setEnable] = React.useState(true);
+  const [visible, setVisible] = React.useState("none");
 
   // function to handle sse
   const sse = React.useCallback(() => {
     if (enable) {
       setEnable(false);
       setResponse("");
-      const eventSource = new EventSource(
-        "https://take-home-endpoints-yak3s7dv3a-el.a.run.app/sse"
-      );
+      const eventSource = new EventSource(url);
 
       eventSource.onmessage = (event) => {
         const newData = JSON.parse(event.data);
@@ -36,6 +38,7 @@ function Mainsection() {
           setResponse((prevResponse) => prevResponse + newData.choices[0].text);
         } else {
           setEnable(true);
+          setVisible("flex");
           eventSource.close();
         }
       };
@@ -119,7 +122,7 @@ function Mainsection() {
             <div style={{ display: "flex" }}>
               {/* left right arrow */}
               <Badge
-                display={"flex"}
+                display={visible}
                 borderRadius={"8px"}
                 backgroundColor={"#334155"}
                 fontSize={"20px"}
@@ -135,21 +138,35 @@ function Mainsection() {
                 <BiRightArrowAlt cursor={"pointer"} />
               </Badge>
               {/* refresh button */}
-              <Badge
-                display={"flex"}
-                alignItems={"center"}
-                borderRadius={"8px"}
-                backgroundColor={"#334155"}
-                fontSize={"20px"}
-                marginRight={"10px"}
-                width={"26px"}
-                color={"white"}
-                cursor={"pointer"}
-                disabled={true}
-                onClick={sse}
-              >
-                <TbRefresh />
-              </Badge>
+              {enable ? (
+                <Badge
+                  display={"flex"}
+                  alignItems={"center"}
+                  borderRadius={"8px"}
+                  backgroundColor={"#334155"}
+                  fontSize={"20px"}
+                  marginRight={"10px"}
+                  width={"26px"}
+                  color={"white"}
+                  cursor={"pointer"}
+                  disabled={true}
+                  onClick={sse}
+                >
+                  <TbRefresh />
+                </Badge>
+              ) : (
+                <Badge
+                  display={"flex"}
+                  alignItems={"center"}
+                  borderRadius={"8px"}
+                  backgroundColor={"#334155"}
+                  fontSize={"20px"}
+                  marginRight={"10px"}
+                  color={"white"}
+                >
+                  <Spinner size={"sm"} />
+                </Badge>
+              )}
               {/* copy button */}
               <Badge
                 display={"flex"}
@@ -176,13 +193,10 @@ function Mainsection() {
       <div id="browser-extensions">
         <div id="chrome">
           <Image
-            width={"30px"}
-            height={"30px"}
-            src="https://img.icons8.com/fluency/48/null/chrome.png"
+            src="https://img.icons8.com/fluency/30/null/chrome.png"
             alt="chrome"
             marginRight={"10px"}
           />
-
           <Text size={"lg"}>Add to Chrome</Text>
         </div>
 
