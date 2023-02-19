@@ -1,25 +1,25 @@
 /* #header-container{} */
-#header-container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#header-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#header{
-    max-width: 400px;
-    height: auto;
-    padding: 20px;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#header {
+  max-width: 400px;
+  height: auto;
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#description{
-    text-align: center;
-    line-height: 20px;
-    margin-bottom: 5px;
-    font-weight: 500;
-    font-size: 18.53px;
+#description {
+  text-align: center;
+  line-height: 20px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 18.53px;
 }
