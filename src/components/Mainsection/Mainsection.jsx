@@ -8,6 +8,8 @@ import {
   Text,
   Spinner,
   Image,
+  Box,
+  Button,
 } from "@chakra-ui/react";
 import { BsArrowReturnLeft } from "react-icons/bs";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
@@ -87,6 +89,7 @@ function Mainsection() {
                 color="gray.300"
                 children={<BsArrowReturnLeft color="gray" />}
                 margin="0px"
+                top={"none"}
               />
             </InputGroup>
           </div>
@@ -191,22 +194,30 @@ function Mainsection() {
 
       {/* browser extensions container */}
       <div id="browser-extensions">
-        <div id="chrome">
-          <Image
-            src="https://img.icons8.com/fluency/30/null/chrome.png"
-            alt="chrome"
-            marginRight={"10px"}
-          />
-          <Text size={"lg"}>Add to Chrome</Text>
-        </div>
+        <Button variant={"unstyled"}>
+          <div id="chrome">
+            <Image
+              src="https://img.icons8.com/fluency/30/null/chrome.png"
+              alt="chrome"
+              marginRight={"10px"}
+              width={"20px"}
+            />
+            <Text fontSize={"14px"} fontWeight={"600"}>
+              Add to Chrome
+            </Text>
+          </div>
+        </Button>
 
         <div id="firefox">
           <Image
             src="https://img.icons8.com/external-those-icons-flat-those-icons/30/null/external-Firefox-logos-and-brands-those-icons-flat-those-icons.png"
             alt="firefox"
             marginRight={"10px"}
+            width={"20px"}
           />
-          <Text size={"lg"}>Add to Firefox</Text>
+          <Text fontSize={"14px"} fontWeight={"600"}>
+            Add to Firefox
+          </Text>
         </div>
       </div>
     </div>

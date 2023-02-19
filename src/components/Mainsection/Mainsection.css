@@ -87,37 +87,45 @@
 }
 
 #input-container {
-  border-width: 2px;
+  background: 
+    linear-gradient(rgb(27, 27, 27) 0 0) padding-box, /*this is your grey background*/
+    linear-gradient(to right, #9c20aa, #fb3570, #FF008280) border-box;
+  color: #fff;
+  padding: 14px 16px;
+  border: 2px solid transparent;
+  border-radius: 8px;
 
-  padding: 10px;
-  border-image: linear-gradient(to right, #921dfb80, #f334f2, #ff008280) round
-    0.5 / 1 / 0.5;
-  border-radius: 20px;
-  background-clip: padding-box;
 }
 
 #chrome {
-  border-width: 2px;
-
-  padding: 10px;
-  border-image: linear-gradient(to right, #921dfb80, #f334f2, #ff008280) round
-    0.5 / 1 / 0.5;
-  border-radius: 10px;
-  margin-right: 10px;
-  /* margin-right: 10px; */
+  
+  
+  background: 
+    linear-gradient(rgb(27, 27, 27) 0 0) padding-box, /*this is your grey background*/
+    linear-gradient(to right, #9c20aa, #fb3570, #FF008280) border-box;
+  color: #fff;
+  padding: 14px 16px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  
+  margin-right: 16px;
+  
   display: flex;
   align-items: center;
+  font-weight: 400;
 }
 
 #firefox {
-  border-width: 2px;
-
-  padding: 10px;
-  border-image: linear-gradient(to right, #921dfb80, #f334f2, #ff008280) round
-    0.5 / 1 / 0.5;
-  border-radius: 10px;
+  background: 
+    linear-gradient(rgb(27, 27, 27) 0 0) padding-box, /*this is your grey background*/
+    linear-gradient(to right, #9c20aa, #fb3570, #FF008280) border-box;
+  color: #fff;
+  padding: 14px 16px;
+  border: 2px solid transparent;
+  border-radius: 8px;
   display: flex;
   align-items: center;
+ 
 }
 
 #browser-extensions {
