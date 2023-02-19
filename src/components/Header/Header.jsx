@@ -12,9 +12,8 @@ function Header() {
         <div id="description">
           <p style={{ marginBottom: "10px" }}>
             Unleash the power of creativity with Merlin, the ultimate tool for
-            marketers!
+            marketers! Say goodbye
           </p>
-          <p>Say goodbye</p>
         </div>
       </div>
     </div>
