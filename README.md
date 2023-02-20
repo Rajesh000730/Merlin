@@ -9,7 +9,7 @@ Since the server respond with only data the query for different input has been t
 
 ## Image of the website with the refresh button and the send button
 
-![Merlin]('./src/assets/merlin.png')
+![Merlin](./src/assets/merlin.png)
 
 ## How to contribute
 
