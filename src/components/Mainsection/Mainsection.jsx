@@ -88,7 +88,9 @@ function Mainsection() {
   const handleSubmit = (e) => {
     setResponses([]);
     setCurrentResponse(-1);
+    setVisible("none");
     e.preventDefault();
+
     command != "" && setCommands([...commands, command]);
     setCommand("");
     e.target.reset();
@@ -140,6 +142,7 @@ function Mainsection() {
               background={"#64748B"}
               margin={"3px"}
               padding={"2px 8px"}
+              cursor={"pointer"}
             >
               {data}
             </Badge>
@@ -228,7 +231,6 @@ function Mainsection() {
           </div>
           <div id="response">
             <p>{enable ? responses[currentResponse] : response}</p>
-            <p>hello</p>
           </div>
         </div>
       </div>
