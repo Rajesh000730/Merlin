@@ -26,6 +26,9 @@ function Mainsection() {
   const [response, setResponse] = React.useState("");
   const [enable, setEnable] = React.useState(true);
   const [visible, setVisible] = React.useState("none");
+  const [bool, setBool] = React.useState(0);
+  const [responses, setResponses] = React.useState([]);
+  const [currentResponse, setCurrentResponse] = React.useState(-1);
 
   // function to handle sse
   const sse = React.useCallback(() => {
@@ -41,6 +44,13 @@ function Mainsection() {
         } else {
           setEnable(true);
           setVisible("flex");
+
+          setCurrentResponse((prevCurrentResponse) =>
+            prevCurrentResponse === responses.length - 1
+              ? prevCurrentResponse + 1
+              : responses.length
+          );
+          setBool((prevBool) => (prevBool == 0 ? 1 : 0));
           eventSource.close();
         }
       };
@@ -53,8 +63,31 @@ function Mainsection() {
     }
   });
 
+  // function to handle left arrow
+  const handleLeftArrow = () => {
+    if (currentResponse > 0) {
+      setCurrentResponse((prevCurrentResponse) => prevCurrentResponse - 1);
+    }
+  };
+
+  // function to handle right arrow
+  const handleRightArrow = () => {
+    if (currentResponse < responses.length - 1) {
+      setCurrentResponse((prevCurrentResponse) => prevCurrentResponse + 1);
+    }
+  };
+
+  // function to handle responses
+  React.useEffect(() => {
+    setResponses((prevResponses) => [...prevResponses, response]);
+    setResponses((prevResponses) => prevResponses.filter((data) => data != ""));
+    console.log(responses);
+  }, [bool]);
+
   // function to handle form submit
   const handleSubmit = (e) => {
+    setResponses([]);
+    setCurrentResponse(-1);
     e.preventDefault();
     command != "" && setCommands([...commands, command]);
     setCommand("");
@@ -69,7 +102,6 @@ function Mainsection() {
   return (
     <div id="mainsection-container">
       {/* input container */}
-
       <div id="mainsection-input">
         <form action="" onSubmit={(e) => handleSubmit(e)}>
           <div id="input-container">
@@ -95,9 +127,9 @@ function Mainsection() {
           </div>
         </form>
       </div>
+      {/* input container */}
 
       {/* frequent commands container */}
-
       <div id="frequent-commands--container">
         <p>Frequent commands</p>
         <div id="commands">
@@ -114,6 +146,7 @@ function Mainsection() {
           ))}
         </div>
       </div>
+      {/* frequent commands container */}
 
       {/* merlin response container */}
       <div id="merlin-response--container">
@@ -136,10 +169,15 @@ function Mainsection() {
                 justifyContent={"space-evenly"}
                 color={"white"}
               >
-                <BiLeftArrowAlt cursor={"pointer"} />
+                <BiLeftArrowAlt cursor={"pointer"} onClick={handleLeftArrow} />
 
-                <BiRightArrowAlt cursor={"pointer"} />
+                <BiRightArrowAlt
+                  cursor={"pointer"}
+                  onClick={handleRightArrow}
+                />
               </Badge>
+              {/* left right arrow */}
+
               {/* refresh button */}
               {enable ? (
                 <Badge
@@ -158,6 +196,7 @@ function Mainsection() {
                   <TbRefresh />
                 </Badge>
               ) : (
+                /* refresh button */
                 <Badge
                   display={"flex"}
                   alignItems={"center"}
@@ -184,13 +223,16 @@ function Mainsection() {
               >
                 <RxCopy />
               </Badge>
+              {/* copy button */}
             </div>
           </div>
           <div id="response">
-            <p>{response}</p>
+            <p>{enable ? responses[currentResponse] : response}</p>
+            <p>hello</p>
           </div>
         </div>
       </div>
+      {/* merlin response container */}
 
       {/* browser extensions container */}
       <div id="browser-extensions">
@@ -218,6 +260,7 @@ function Mainsection() {
           </div>
         </Button>
       </div>
+      {/* browser extensions container */}
     </div>
   );
 }
