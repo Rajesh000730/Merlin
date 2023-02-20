@@ -115,6 +115,7 @@
   display: flex;
   align-items: center;
   font-weight: 400;
+  font-size: 14px;
 }
 
 #firefox {
@@ -127,10 +128,50 @@
   border-radius: 8px;
   display: flex;
   align-items: center;
+  font-size: 14px;
  
 }
 
 #browser-extensions {
   display: flex;
   margin-top: 24px;
+  max-width: 85%;
+  padding: 0;
+}
+
+
+@media (max-width:468px) {
+  #chrome {
+  
+  
+    background: 
+      linear-gradient(rgb(27, 27, 27) 0 0) padding-box, /*this is your grey background*/
+      linear-gradient(to right, #9c20aa, #fb3570, #FF008280) border-box;
+    color: #fff;
+    padding: 12px 14px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    
+    margin-right: 16px;
+    
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 12px;
+  }
+  
+  #firefox {
+    background: 
+      linear-gradient(rgb(27, 27, 27) 0 0) padding-box, /*this is your grey background*/
+      linear-gradient(to right, #9c20aa, #fb3570, #FF008280) border-box;
+    color: #fff;
+    padding: 12px 14px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+   
+  }
+  
 }

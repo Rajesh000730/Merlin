@@ -202,9 +202,7 @@ function Mainsection() {
               marginRight={"10px"}
               width={"20px"}
             />
-            <Text fontSize={"14px"} fontWeight={"600"}>
-              Add to Chrome
-            </Text>
+            <Text fontWeight={"600"}>Add to Chrome</Text>
           </div>
         </Button>
 
@@ -216,9 +214,7 @@ function Mainsection() {
               marginRight={"10px"}
               width={"20px"}
             />
-            <Text fontSize={"14px"} fontWeight={"600"}>
-              Add to Firefox
-            </Text>
+            <Text fontWeight={"600"}>Add to Firefox</Text>
           </div>
         </Button>
       </div>

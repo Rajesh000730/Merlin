@@ -9,7 +9,7 @@
 
 #header {
   width: 85%;
-  max-width: 400px;
+  max-width: 452px;
   height: auto;
   padding: 20px;
   margin: 20px;
@@ -24,4 +24,14 @@
   margin-bottom: 5px;
   font-weight: 500;
   font-size: 18.53px;
+}
+
+@media (max-width:468px){
+  #description{
+    text-align: center;
+    line-height: 20px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 14px;
+  }
 }
