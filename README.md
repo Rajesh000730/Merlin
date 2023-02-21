@@ -5,7 +5,7 @@ Merlin has a revolutionary new UI for using OpenAI's ChatGPT on all your favouri
 ## How to use Merlin
 
 To use merlin Click the refresh button to get a new prompt. Then type your response and click the send button to send it to OpenAI. You can also click the refresh button to get a new prompt.
-Since the server respond with only data the query for different input has been temporarily disabled.
+Since the server respond with only one data the query for different input has been temporarily disabled.
 
 ## Image of the website with the refresh button and the send button
 
@@ -25,7 +25,7 @@ To run Merlin locally, you need to clone the repository and install the dependen
 
 Once you've installed the dependencies, you can run Merlin by running the following command:
 
-        npm run dev
+    npm run dev
 
 ## How to build Merlin
 
